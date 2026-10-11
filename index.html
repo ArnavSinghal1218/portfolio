@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnav Singhal | Data Scientist & Deep Learning Engineer</title>
+    <meta name="description" content="Portfolio of Arnav Singhal, Data Scientist specializing in deep learning for medical imaging, scientific ML, biomedical NLP, and production ML pipelines. M.Sc. Universität Heidelberg graduate seeking Data Scientist roles in India.">
+    <meta name="keywords" content="Arnav Singhal, Data Scientist, Machine Learning Engineer, Deep Learning, Medical Imaging, PyTorch, Heidelberg University, NLP, GCP, Docker">
+    
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:title" content="Arnav Singhal | Data Scientist & Deep Learning Engineer">
+    <meta property="og:description" content="Data Scientist specializing in Deep Learning for Medical Imaging, Scientific ML, and Deployed AI Systems.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS with CDN Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#050811',
+                            900: '#070B14',
+                            850: '#0B1120',
+                            800: '#0F172A',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        },
+                        purple: {
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-slate-100 min-h-screen relative selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Interactive Neural Network Canvas Background -->
+    <canvas id="neural-canvas" class="fixed inset-0 pointer-events-auto z-0 opacity-60"></canvas>
+    
+    <!-- Ambient Radial Lighting Overlays -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+    <div class="fixed top-1/3 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+    <div class="fixed bottom-10 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+    <!-- Main Content Wrapper (Above Canvas) -->
+    <div class="relative z-10">
+
+        <!-- Top Navigation Bar -->
+        <header class="sticky top-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                
+                <!-- Logo & Brand Monogram -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 p-[1px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition">
+                        <div class="w-full h-full bg-dark-950 rounded-[11px] flex items-center justify-center">
+                            <span class="font-mono font-bold text-cyan-400 group-hover:text-cyan-300 transition text-sm">AS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-slate-100 tracking-tight group-hover:text-cyan-400 transition text-base">Arnav Singhal</div>
+                        <div class="text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                            <span>Data Scientist & ML Engineer</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                    <a href="#thesis" class="nav-link hover:text-cyan-400 transition">Thesis</a>
+                    <a href="#playgrounds" class="nav-link hover:text-cyan-400 transition">Live Demos</a>
+                    <a href="#projects" class="nav-link hover:text-cyan-400 transition">Projects</a>
+                    <a href="#case-studies" class="nav-link hover:text-cyan-400 transition">Articles</a>
+                    <a href="#experience" class="nav-link hover:text-cyan-400 transition">Experience</a>
+                    <a href="#innovation" class="nav-link hover:text-cyan-400 transition">Innovation</a>
+                    <a href="#skills" class="nav-link hover:text-cyan-400 transition">Competencies</a>
+                    <a href="#contact" class="nav-link hover:text-cyan-400 transition">Contact</a>
+                </nav>
+
+                <!-- Status Badge & Resume CTA -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/50 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Seeking Roles in India</span>
+                    </div>
+                    <a href="Arnav_Singhal_Resume.pdf" download="Arnav_Singhal_Resume.pdf" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-slate-950 font-semibold text-xs transition shadow-md shadow-cyan-500/25 flex items-center gap-1.5">
+                        <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white" aria-label="Toggle navigation">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-dark-950/95 border-b border-slate-800 px-6 py-4 space-y-3 font-medium text-sm">
+                <a href="#thesis" class="block text-slate-300 hover:text-cyan-400 py-1">Thesis Spotlight</a>
+                <a href="#playgrounds" class="block text-slate-300 hover:text-cyan-400 py-1">Live Interactive Demos</a>
+                <a href="#projects" class="block text-slate-300 hover:text-cyan-400 py-1">Key Projects</a>
+                <a href="#case-studies" class="block text-slate-300 hover:text-cyan-400 py-1">Research Case Studies</a>
+                <a href="#experience" class="block text-slate-300 hover:text-cyan-400 py-1">Experience & Education</a>
+                <a href="#innovation" class="block text-slate-300 hover:text-cyan-400 py-1">Entrepreneurship & Innovation</a>
+                <a href="#skills" class="block text-slate-300 hover:text-cyan-400 py-1">Core Competencies</a>
+                <a href="Arnav_Singhal_Resume.pdf" download="Arnav_Singhal_Resume.pdf" class="block text-cyan-400 font-semibold py-1">Download Resume (PDF)</a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="hero" class="pt-16 pb-20 md:pt-24 md:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl">
+                
+                <!-- Availability / Academic Credentials Pill -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-cyan-500/30 text-slate-200 text-xs font-mono mb-6 backdrop-blur shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    <span>M.Sc. Data & Computer Science • Universität Heidelberg, Germany</span>
+                    <span class="text-slate-500">|</span>
+                    <span class="text-cyan-300">Open to Roles in India</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight sm:leading-none mb-6">
+                    Engineering <span class="gradient-text-tech">Deep Learning</span> for Scientific & Clinical Systems
+                </h1>
+
+                <!-- Professional Sub-headline from Resume -->
+                <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-light mb-8 max-w-3xl">
+                    I am <strong class="text-white font-semibold">Arnav Singhal</strong>, a Data Scientist specializing in deep learning for 
+                    <span class="text-cyan-400 font-medium">medical imaging</span>, 
+                    <span class="text-purple-400 font-medium">biomedical NLP</span>, and 
+                    <span class="text-emerald-400 font-medium">production ML systems</span>. 
+                    Reduced reconstruction error by <span class="text-white font-mono font-bold bg-slate-800/80 px-1.5 py-0.5 rounded border border-cyan-500/30">34%</span> in graduate thesis research on Fourier-augmented neural architectures, and experienced in deploying containerized GCP & Docker pipelines.
+                </p>
+
+                <!-- Quick Contact Pills & Social Buttons -->
+                <div class="flex flex-wrap items-center gap-3 mb-10 text-xs font-mono">
+                    <button class="copy-email-btn flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 transition shadow-sm" title="Click to copy email">
+                        <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+                        <span>arnavsinghal637@gmail.com</span>
+                        <i data-lucide="copy" class="w-3 h-3 text-slate-400"></i>
+                    </button>
+
+                    <a href="https://linkedin.com/in/arnav-singhal" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 transition shadow-sm">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
+                        <span>linkedin.com/in/arnav-singhal</span>
+                        <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                    </a>
+
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-purple-400"></i>
+                        <span>Ghaziabad, INDIA</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300">
+                        <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+                        <span>+91 9811504728</span>
+                    </div>
+                </div>
+
+                <!-- Primary CTA Buttons -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="Arnav_Singhal_Resume.pdf" download="Arnav_Singhal_Resume.pdf" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold text-sm transition shadow-lg shadow-emerald-500/30 flex items-center gap-2 group">
+                        <i data-lucide="file-text" class="w-4 h-4 text-slate-950 group-hover:scale-110 transition"></i>
+                        <span>Download Resume (PDF)</span>
+                    </a>
+
+                    <a href="#playgrounds" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/30 flex items-center gap-2 group">
+                        <i data-lucide="play" class="w-4 h-4 fill-current group-hover:scale-110 transition"></i>
+                        <span>Launch Interactive Model Playgrounds</span>
+                    </a>
+
+                    <a href="#thesis" class="px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-cyan-500/40 text-slate-200 font-semibold text-sm transition flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 text-cyan-400"></i>
+                        <span>Explore Heidelberg Thesis</span>
+                    </a>
+
+                    <a href="#projects" class="px-6 py-3.5 rounded-xl bg-slate-800/50 hover:bg-slate-700/60 border border-slate-700/80 text-slate-300 font-semibold text-sm transition flex items-center gap-2">
+                        <i data-lucide="folder-code" class="w-4 h-4 text-purple-400"></i>
+                        <span>View All Projects</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quantitative Stats Highlights Bar -->
+            <div id="hero-stats" class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl">
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800/80 relative overflow-hidden">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 font-mono stat-number" data-target="-34%">-34%</div>
+                    <div class="text-xs font-semibold text-slate-200 mt-1">Mean Relative Error</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">DeepPET Fourier U-Net vs baseline</div>
+                    <div class="absolute -right-2 -bottom-2 w-12 h-12 bg-cyan-500/10 rounded-full blur-xl pointer-events-none"></div>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800/80 relative overflow-hidden">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 font-mono stat-number" data-target="1.0">1.0</div>
+                    <div class="text-xs font-semibold text-slate-200 mt-1">Intelligent Systems Grade</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">Heidelberg University (Highest Honors)</div>
+                    <div class="absolute -right-2 -bottom-2 w-12 h-12 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800/80 relative overflow-hidden">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 font-mono stat-number" data-target="510h">510h</div>
+                    <div class="text-xs font-semibold text-slate-200 mt-1">Venture & Innovation</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">17 ECTS hei_INNOVATION Certified</div>
+                    <div class="absolute -right-2 -bottom-2 w-12 h-12 bg-purple-500/10 rounded-full blur-xl pointer-events-none"></div>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800/80 relative overflow-hidden">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-300 font-mono stat-number" data-target="9,999">9,999</div>
+                    <div class="text-xs font-semibold text-slate-200 mt-1">PubMed Bio-Articles</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">Indexed in PubMedBERT QA system</div>
+                    <div class="absolute -right-2 -bottom-2 w-12 h-12 bg-cyan-500/10 rounded-full blur-xl pointer-events-none"></div>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800/80 relative overflow-hidden col-span-2 md:col-span-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 font-mono stat-number" data-target="100%">100%</div>
+                    <div class="text-xs font-semibold text-slate-200 mt-1">Client CSAT Score</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">Toluna Corporate • 0 P&G errors</div>
+                    <div class="absolute -right-2 -bottom-2 w-12 h-12 bg-amber-500/10 rounded-full blur-xl pointer-events-none"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graduate Thesis Spotlight Section -->
+        <section id="thesis" class="py-20 bg-dark-950/60 border-y border-slate-800/80 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-3">
+                            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                            <span>M.Sc. Master's Thesis Spotlight</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                            Evaluating Fourier Layers in DeepPET Architecture
+                        </h2>
+                        <p class="text-sm font-mono text-cyan-400 mt-1">
+                            Forward Modelling of the 2D Helmholtz Equation • Universität Heidelberg (2023 - 2026)
+                        </p>
+                    </div>
+
+                    <button class="open-project-modal mt-4 md:mt-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-mono transition" data-project="deeppet">
+                        <i data-lucide="code-2" class="w-4 h-4 text-cyan-400"></i>
+                        <span>Inspect Neural Architecture & Code</span>
+                    </button>
+                </div>
+
+                <!-- Thesis Grid Showcase -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- Left: Technical Breakdown & Metrics -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">The Scientific Challenge & Solution</h3>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    Simulating forward wave-field propagation modeled by the 2D Helmholtz equation is computationally prohibitive with traditional numerical solvers (e.g. finite difference methods). While standard deep learning architectures struggle with phase dispersion and localized receptive field limits, this thesis engineered an 
+                                    <strong class="text-cyan-300">FFT-augmented U-Net (DeepPET)</strong> integrating spectral convolution layers with hybrid fusion and skip connections.
+                                </p>
+                            </div>
+
+                            <!-- Highlights Bullet Matrix -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <div class="flex items-center gap-2 text-cyan-400 font-semibold text-xs font-mono mb-1">
+                                        <i data-lucide="zap" class="w-4 h-4"></i>
+                                        <span>Spectral Convolutions</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Performs parameterized tensor multiplications directly in the 2D Fourier domain, learning global receptive fields with quasi-linear complexity.
+                                    </p>
+                                </div>
+
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <div class="flex items-center gap-2 text-purple-400 font-semibold text-xs font-mono mb-1">
+                                        <i data-lucide="git-merge" class="w-4 h-4"></i>
+                                        <span>Hybrid Skip Fusion</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Fuses high-frequency spatial boundary features with spectral phase representations across the U-Net hierarchy.
+                                    </p>
+                                </div>
+
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <div class="flex items-center gap-2 text-emerald-400 font-semibold text-xs font-mono mb-1">
+                                        <i data-lucide="activity" class="w-4 h-4"></i>
+                                        <span>Physics-Aware Metrics</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Validated using multi-mode evaluation in TensorBoard tracking phase error, wavenumber conservation, and velocity distributions.
+                                    </p>
+                                </div>
+
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <div class="flex items-center gap-2 text-amber-400 font-semibold text-xs font-mono mb-1">
+                                        <i data-lucide="trending-down" class="w-4 h-4"></i>
+                                        <span>Quantitative Superiority</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Achieved a <strong>34% lower mean relative error</strong> and <strong>62% validation loss reduction</strong> over standard baseline models.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 flex flex-wrap items-center gap-2 text-xs font-mono text-slate-400">
+                                <span class="text-slate-500">Core Stack:</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-cyan-300 border border-slate-700">Python</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-cyan-300 border border-slate-700">PyTorch</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-cyan-300 border border-slate-700">torch.fft</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-cyan-300 border border-slate-700">TensorBoard</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-cyan-300 border border-slate-700">GCP Compute</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Architecture & Error Comparison Card -->
+                    <div class="lg:col-span-5 flex flex-col justify-between glass-panel p-6 sm:p-8 rounded-3xl border border-cyan-500/20 shadow-xl relative overflow-hidden">
+                        <div>
+                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
+                                <span class="text-xs font-mono text-slate-400">Benchmark Comparison</span>
+                                <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Verified on Held-out Sets</span>
+                            </div>
+
+                            <h4 class="text-lg font-bold text-white mb-4">Error Reduction vs. Standard U-Net</h4>
+
+                            <!-- Visual Bar Comparison 1: Relative Error -->
+                            <div class="space-y-4 font-mono text-xs mb-6">
+                                <div>
+                                    <div class="flex justify-between text-slate-300 mb-1">
+                                        <span>Standard U-Net Baseline:</span>
+                                        <span class="text-red-400 font-bold">100% (Baseline Error)</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                                        <div class="bg-red-500/70 h-full rounded-full" style="width: 100%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-slate-300 mb-1">
+                                        <span>DeepPET (Fourier FFT Layer):</span>
+                                        <span class="text-cyan-400 font-bold">66.0% (-34% Relative Error)</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-cyan-500 to-purple-500 h-full rounded-full" style="width: 66%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visual Bar Comparison 2: Validation Loss -->
+                            <div class="space-y-4 font-mono text-xs">
+                                <div>
+                                    <div class="flex justify-between text-slate-300 mb-1">
+                                        <span>Validation Loss Baseline:</span>
+                                        <span class="text-red-400 font-bold">1.00x Loss</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                                        <div class="bg-red-500/70 h-full rounded-full" style="width: 100%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-slate-300 mb-1">
+                                        <span>DeepPET Fourier Augmented:</span>
+                                        <span class="text-emerald-400 font-bold">0.38x Loss (-62% Loss Drop)</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-emerald-500 to-cyan-500 h-full rounded-full" style="width: 38%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Simulated Wave Equation Formula Box -->
+                        <div class="mt-8 p-4 rounded-xl bg-slate-950/80 border border-slate-800 font-mono text-xs text-slate-400">
+                            <div class="text-[10px] text-cyan-400 uppercase tracking-widest mb-1">Target PDE Governing Equation</div>
+                            <div class="text-slate-200 text-sm py-1 font-semibold">
+                                \(\nabla^2 u(\mathbf{x}) + k^2(\mathbf{x}) u(\mathbf{x}) = f(\mathbf{x})\)
+                            </div>
+                            <div class="text-[11px] text-slate-500 mt-1">
+                                Where \(k(\mathbf{x}) = \omega / c(\mathbf{x})\) represents spatially heterogeneous acoustic velocity fields.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Model Playgrounds Section -->
+        <section id="playgrounds" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono uppercase tracking-wider mb-3">
+                    <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                    <span>Interactive Demonstrations</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Live Model Playgrounds
+                </h2>
+                <p class="text-slate-400 text-base mt-4">
+                    Explore real-time simulations of the algorithms and pipelines engineered in my resume.
+                </p>
+            </div>
+
+            <!-- Demo Tabs Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Demo 1: Dynamic Pricing Simulator -->
+                <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 relative">
+                    <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+                        <div>
+                            <span class="text-xs font-mono text-cyan-400 uppercase">Interactive Machine Learning</span>
+                            <h3 class="text-xl font-bold text-white">Dynamic Pricing Engine</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Random Forest Regressor</span>
+                    </div>
+
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                        Simulating the real-time pricing microservice trained on 10k+ contextual scenarios and deployed with Docker and Streamlit.
+                    </p>
+
+                    <!-- Interactive Controls -->
+                    <div class="space-y-5">
+                        
+                        <!-- Slider: Distance -->
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-2">
+                                <span>Trip Distance (km):</span>
+                                <span id="dist-val" class="text-cyan-400 font-bold">12.5 km</span>
+                            </div>
+                            <input type="range" id="price-dist" min="1" max="50" step="0.5" value="12.5" class="w-full">
+                        </div>
+
+                        <!-- Slider: Demand Surge -->
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-2">
+                                <span>Real-Time Demand Multiplier:</span>
+                                <span id="surge-val" class="text-purple-400 font-bold">1.4x</span>
+                            </div>
+                            <input type="range" id="price-surge" min="1.0" max="3.0" step="0.1" value="1.4" class="w-full">
+                        </div>
+
+                        <!-- Dropdowns: Weather & Vehicle -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1.5">Weather Signal:</label>
+                                <select id="price-weather" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 outline-none focus:border-cyan-400">
+                                    <option value="1.0">Clear / Normal (1.0x)</option>
+                                    <option value="1.3" selected>Heavy Rain (+30%)</option>
+                                    <option value="1.6">Severe Storm (+60%)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1.5">Vehicle Category:</label>
+                                <select id="price-vehicle" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 outline-none focus:border-cyan-400">
+                                    <option value="0.85">Eco Auto (0.85x)</option>
+                                    <option value="1.0" selected>Standard Sedan (1.0x)</option>
+                                    <option value="1.45">Premium SUV (1.45x)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Live Output Box -->
+                        <div class="bg-gradient-to-br from-slate-950 to-slate-900 p-5 rounded-2xl border border-cyan-500/30 mt-6 shadow-inner">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <div class="text-[11px] font-mono text-slate-400">Estimated Contextual Fare</div>
+                                    <div id="fare-output" class="text-3xl font-extrabold text-cyan-400 font-mono">₹412</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[11px] font-mono text-slate-400">Inference Latency</div>
+                                    <div id="model-latency" class="text-sm font-bold text-emerald-400 font-mono">11.4 ms</div>
+                                </div>
+                            </div>
+
+                            <!-- Cost Breakdown -->
+                            <div class="grid grid-cols-4 gap-2 pt-3 border-t border-slate-800 text-[11px] font-mono text-center">
+                                <div>
+                                    <div class="text-slate-500">Base</div>
+                                    <div id="breakdown-base" class="text-slate-300 font-semibold">₹50</div>
+                                </div>
+                                <div>
+                                    <div class="text-slate-500">Distance</div>
+                                    <div id="breakdown-dist" class="text-slate-300 font-semibold">₹181</div>
+                                </div>
+                                <div>
+                                    <div class="text-slate-500">Weather</div>
+                                    <div id="breakdown-weather" class="text-amber-400 font-semibold">+₹69</div>
+                                </div>
+                                <div>
+                                    <div class="text-slate-500">Surge</div>
+                                    <div id="breakdown-surge" class="text-purple-400 font-semibold">+₹112</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resume Validation Metrics Tag -->
+                        <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-1">
+                            <span>Evaluated on 80/20 Split:</span>
+                            <span class="text-cyan-300 font-semibold">RMSE 2.08 • MAE 1.67 • R² 0.49</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 2: PubMedQA Biomedical Literature Search -->
+                <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 relative">
+                    <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+                        <div>
+                            <span class="text-xs font-mono text-purple-400 uppercase">Biomedical NLP & QA</span>
+                            <h3 class="text-xl font-bold text-white">PubMedQA Semantic Search</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">PubMedBERT + DistilBERT</span>
+                    </div>
+
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Two-stage retrieve-then-extract pipeline over 9,999 PubMed biomedical abstracts (2013-2023) using dense vector indexing with txtai.
+                    </p>
+
+                    <!-- Pre-set Query Chips -->
+                    <div class="mb-4">
+                        <div class="text-[11px] font-mono text-slate-400 mb-2">Try sample scientific queries:</div>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="pubmed-chip px-2.5 py-1 text-[11px] font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 transition" data-query="How do Fourier layers in DeepPET reconstruct 2D wave fields?">
+                                DeepPET Fourier Wave-fields
+                            </button>
+                            <button class="pubmed-chip px-2.5 py-1 text-[11px] font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-purple-300 border border-slate-700 transition" data-query="What is the role of CNN-based orientation tracking in coronary artery CTA?">
+                                Coronary CTA Centerline Tracking
+                            </button>
+                            <button class="pubmed-chip px-2.5 py-1 text-[11px] font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-slate-700 transition" data-query="How do B-cos networks enforce interpretability in emotion detection?">
+                                B-Cos Interpretability on FER2013
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="flex gap-2 mb-6">
+                        <input type="text" id="pubmed-search-input" value="How do Fourier layers in DeepPET reconstruct 2D wave fields?" class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-200 outline-none focus:border-cyan-400 font-sans" placeholder="Ask a biomedical question in natural language...">
+                        <button id="pubmed-search-btn" class="px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition flex items-center gap-1.5">
+                            <i data-lucide="search" class="w-3.5 h-3.5"></i>
+                            <span>Query</span>
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Results Container -->
+                    <div id="pubmed-results">
+                        <!-- Populated by interactive-demos.js -->
+                    </div>
+                </div>
+
+                <!-- Demo 3: Explainable Emotion Detection: B-Cos vs Standard CNN -->
+                <div class="lg:col-span-12 glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 relative mt-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-800 gap-3">
+                        <div>
+                            <span class="text-xs font-mono text-emerald-400 uppercase">Explainable AI & Computer Vision</span>
+                            <h3 class="text-xl font-bold text-white">B-Cos Networks vs. Standard CNN: Facial Landmark Interpretability</h3>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button class="xai-toggle-btn active px-3 py-1.5 text-xs font-mono rounded-lg bg-cyan-500 text-slate-950 font-semibold border border-cyan-400 transition" data-model="bcos">
+                                B-Cos CNN (Interpretable)
+                            </button>
+                            <button class="xai-toggle-btn px-3 py-1.5 text-xs font-mono rounded-lg bg-slate-800 text-slate-300 border border-slate-700 transition" data-model="standard">
+                                Standard CNN (Grad-CAM)
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        <!-- Left: Visual Simulated Face & Heatmap Overlay -->
+                        <div class="md:col-span-5 flex flex-col items-center">
+                            <div class="relative w-64 h-64 rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 flex items-center justify-center shadow-2xl">
+                                <!-- Base Face Representation (FER2013 48x48 style representation) -->
+                                <svg class="w-48 h-48 text-slate-700 opacity-60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="50" cy="50" r="42" stroke="currentColor"/>
+                                    <!-- Eyes -->
+                                    <circle cx="35" cy="40" r="5" fill="currentColor"/>
+                                    <circle cx="65" cy="40" r="5" fill="currentColor"/>
+                                    <!-- Nose -->
+                                    <path d="M50 45 L48 55 L53 55" stroke="currentColor"/>
+                                    <!-- Expressive Mouth Curve -->
+                                    <path d="M32 68 Q50 82 68 68" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+
+                                <!-- Dynamic Heatmap Overlay Layer -->
+                                <div id="xai-heatmap-layer" class="absolute inset-0 transition-all duration-500 pointer-events-none" style="background: radial-gradient(circle at 35% 38%, rgba(6,182,212,0.7) 0%, transparent 22%), radial-gradient(circle at 65% 38%, rgba(6,182,212,0.7) 0%, transparent 22%), radial-gradient(ellipse at 50% 72%, rgba(236,72,153,0.75) 0%, transparent 32%); mix-blend-mode: screen; opacity: 0.9;"></div>
+                                
+                                <div class="absolute bottom-2 left-2 right-2 text-center bg-dark-950/80 backdrop-blur py-1 px-2 rounded text-[10px] font-mono text-slate-300 border border-slate-800">
+                                    FER2013 Sample: 7-Class Facial Emotion
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Explanation & Research Insights from Resume -->
+                        <div class="md:col-span-7 space-y-4">
+                            <div class="flex items-center gap-2">
+                                <span id="xai-model-badge" class="px-2.5 py-1 text-xs font-mono rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                                    B-Cos CNN (Interpretable by Design)
+                                </span>
+                            </div>
+
+                            <p id="xai-arch-desc" class="text-sm text-slate-300 leading-relaxed">
+                                B-cos transformations enforce alignment between convolutional weight vectors and input representations. The resulting heatmap concentrates cleanly on salient anatomical features (eyes and mouth curvature) with minimal background noise.
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-4 pt-2">
+                                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                                    <div class="text-[11px] font-mono text-slate-400">Interpretability Quality:</div>
+                                    <div id="xai-metric-interp" class="text-emerald-400 font-bold font-mono">High (Faithful & Localized)</div>
+                                </div>
+                                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                                    <div class="text-[11px] font-mono text-slate-400">Test Accuracy (FER2013):</div>
+                                    <div id="xai-metric-acc" class="text-white font-bold font-mono">66.4% (Parity with baseline)</div>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-xs text-slate-400">
+                                <strong class="text-slate-200">Key Finding:</strong> Shows interpretability without an accuracy cost, providing safety and transparency in clinical diagnostics, healthcare, and human-computer interaction.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 4: Interactive 3D / DICOM CTA Vessel Slice Viewer -->
+                <div class="lg:col-span-12 glass-panel p-6 sm:p-8 rounded-3xl border border-cyan-500/30 relative mt-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-slate-800 gap-3">
+                        <div>
+                            <span class="text-xs font-mono text-cyan-400 uppercase">Cardiovascular AI & Medical Imaging</span>
+                            <h3 class="text-xl font-bold text-white">Interactive Cardiac CTA & 3D Centerline Explorer</h3>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span id="cta-stenosis-badge" class="px-2 py-0.5 text-[10px] font-mono rounded bg-emerald-950/70 text-emerald-300 border border-emerald-500/40">
+                                Normal Patent Vessel
+                            </span>
+                            <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">SimpleITK • M×N×4</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <!-- Left: 2D Axial CTA Slice View Canvas -->
+                        <div class="lg:col-span-5 flex flex-col items-center">
+                            <div class="relative w-80 h-80 rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 flex items-center justify-center shadow-2xl">
+                                <canvas id="cta-slice-canvas" width="320" height="320" class="w-full h-full"></canvas>
+                                <div class="absolute top-2 left-2 bg-dark-950/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-mono text-cyan-300 border border-cyan-500/30">
+                                    Axial View (0.5mm isotropic)
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between w-80 text-[10px] font-mono text-slate-400 mt-2">
+                                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-cyan-400"></span> CNN Centerline</span>
+                                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-500"></span> Ground Truth</span>
+                                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-white"></span> Contrast Lumen</span>
+                            </div>
+                        </div>
+
+                        <!-- Center: Controls & Parameters -->
+                        <div class="lg:col-span-4 space-y-4">
+                            <!-- Slider: Z Depth -->
+                            <div>
+                                <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
+                                    <span>Axial Slice Depth:</span>
+                                    <span id="cta-depth-val" class="text-cyan-400 font-bold">Slice 20 / 40 (10.0 mm)</span>
+                                </div>
+                                <input type="range" id="cta-slice-depth" min="1" max="40" step="1" value="20" class="w-full">
+                            </div>
+
+                            <!-- Windowing Preset Select -->
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1.5">Hounsfield Window / Level:</label>
+                                <select id="cta-window-preset" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 outline-none focus:border-cyan-400 font-mono">
+                                    <option value="lumen" selected>Coronary Lumen [WL: 300, WW: 800]</option>
+                                    <option value="soft">Soft Myocardium [WL: 40, WW: 400]</option>
+                                    <option value="bone">Calcified Plaque [WL: 500, WW: 1500]</option>
+                                </select>
+                            </div>
+
+                            <!-- Toggle Centerline -->
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <span class="text-xs font-mono text-slate-300">CNN Orientation Centerline:</span>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="cta-toggle-centerline" checked class="sr-only peer">
+                                    <div class="w-9 h-5 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-cyan-500"></div>
+                                </label>
+                            </div>
+
+                            <!-- Toggle Stenosis -->
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <span class="text-xs font-mono text-slate-300">Simulate Vascular Stenosis:</span>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="cta-toggle-stenosis" class="sr-only peer">
+                                    <div class="w-9 h-5 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-rose-500"></div>
+                                </label>
+                            </div>
+
+                            <!-- Readout Deviation -->
+                            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-xs font-mono">
+                                <div class="text-[10px] text-slate-500 uppercase tracking-wider">Spatial Centerline Deviation:</div>
+                                <div id="cta-deviation-val" class="text-cyan-400 font-bold text-sm mt-0.5">2.71 mm (Within 5.0mm tolerance)</div>
+                            </div>
+                        </div>
+
+                        <!-- Right: 3D Vessel Tree Reconstruction Rotating Canvas -->
+                        <div class="lg:col-span-3 flex flex-col items-center">
+                            <div class="relative w-60 h-60 rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 flex items-center justify-center shadow-2xl">
+                                <canvas id="cta-3d-canvas" width="240" height="240" class="w-full h-full"></canvas>
+                                <div class="absolute top-2 left-2 bg-dark-950/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-mono text-purple-300 border border-purple-500/30">
+                                    3D Vessel Spline (M×N×4)
+                                </div>
+                            </div>
+                            <div class="text-center text-[10px] font-mono text-slate-400 mt-2">
+                                Real-time rotating 3D coronary trajectory
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Key Projects Section -->
+        <section id="projects" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/80">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-3">
+                        <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                        <span>Curated Technical Portfolio</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Key Engineering Projects
+                    </h2>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap items-center gap-2 mt-6 md:mt-0">
+                    <button class="project-filter-btn active px-3 py-1.5 rounded-lg text-xs font-mono bg-cyan-500 text-slate-950 border border-cyan-400 font-semibold transition" data-filter="all">All Projects</button>
+                    <button class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-white transition" data-filter="medical">Medical AI & Imaging</button>
+                    <button class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-white transition" data-filter="scientific">Scientific ML</button>
+                    <button class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-white transition" data-filter="nlp">Biomedical NLP & RAG</button>
+                    <button class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-white transition" data-filter="deployment">Deployment & ML</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Project 1: DeepPET Fourier Layers -->
+                <div class="project-card flex flex-col justify-between glass-panel glass-panel-hover p-6 rounded-3xl border border-slate-800 transition duration-300" data-category="scientific medical">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono rounded bg-cyan-950/70 text-cyan-300 border border-cyan-500/30">M.Sc. Thesis</span>
+                            <span class="text-xs font-mono text-cyan-400 font-bold">-34% Error</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Fourier Layers in DeepPET for Wave-field Forward Modelling</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            FFT-augmented U-Net integrating spectral convolutions for forward modelling of the 2D Helmholtz equation. Reduced validation loss by 62% and mean relative error by 34%.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">PyTorch</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">torch.fft</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">TensorBoard</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">GCP</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mt-2">
+                        <button class="open-project-modal flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-project="deeppet">
+                            <span>Deep Dive</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <button class="open-video-modal px-3 py-2.5 rounded-xl bg-red-950/40 hover:bg-red-900/60 border border-red-500/30 text-red-300 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-video="deeppet" title="Watch 90s Walkthrough">
+                            <i data-lucide="play-circle" class="w-4 h-4 text-red-400"></i>
+                            <span>Video</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Coronary Arteries Reconstruction -->
+                <div class="project-card flex flex-col justify-between glass-panel glass-panel-hover p-6 rounded-3xl border border-slate-800 transition duration-300" data-category="medical">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono rounded bg-purple-950/70 text-purple-300 border border-purple-500/30">Medical Imaging</span>
+                            <span class="text-xs font-mono text-purple-400 font-bold">2.71 mm Dev</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Coronary Arteries Reconstruction from CTA Volumes</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Processed cardiac CTA volumes (.mhd) with SimpleITK. Used CNN-based orientation tracking for 3D centerline extraction (M×N×4) with 100% points within 5 mm ground truth tolerance.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">SimpleITK</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">3D Reconstruction</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">CNN Orientation</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Stenosis Sim</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mt-2">
+                        <button class="open-project-modal flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-project="coronary">
+                            <span>Deep Dive</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <button class="open-video-modal px-3 py-2.5 rounded-xl bg-red-950/40 hover:bg-red-900/60 border border-red-500/30 text-red-300 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-video="coronary" title="Watch 90s Walkthrough">
+                            <i data-lucide="play-circle" class="w-4 h-4 text-red-400"></i>
+                            <span>Video</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: PubMedQA -->
+                <div class="project-card flex flex-col justify-between glass-panel glass-panel-hover p-6 rounded-3xl border border-slate-800 transition duration-300" data-category="nlp">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono rounded bg-emerald-950/70 text-emerald-300 border border-emerald-500/30">Biomedical NLP</span>
+                            <span class="text-xs font-mono text-emerald-400 font-bold">9,999 PMIDs</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">PubMedQA: Biomedical Literature Search & QA System</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Dense vector retrieval with txtai and PubMedBERT embeddings over 9,999 abstracts. Two-stage retrieve-then-extract pipeline with DistilBERT SQuAD QA in Streamlit.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">PubMedBERT</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">txtai</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">DistilBERT</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Streamlit</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mt-2">
+                        <button class="open-project-modal flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-project="pubmedqa">
+                            <span>Deep Dive</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <button class="open-video-modal px-3 py-2.5 rounded-xl bg-red-950/40 hover:bg-red-900/60 border border-red-500/30 text-red-300 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-video="pubmedqa" title="Watch 90s Walkthrough">
+                            <i data-lucide="play-circle" class="w-4 h-4 text-red-400"></i>
+                            <span>Video</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Explainable Emotion Detection with B-Cos -->
+                <div class="project-card flex flex-col justify-between glass-panel glass-panel-hover p-6 rounded-3xl border border-slate-800 transition duration-300" data-category="medical scientific">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono rounded bg-cyan-950/70 text-cyan-300 border border-cyan-500/30">Explainable AI</span>
+                            <span class="text-xs font-mono text-cyan-400 font-bold">35k+ Images</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Explainable Emotion Detection Using B-Cos Networks</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Compared standard CNN vs B-cos CNN for 7-class emotion recognition on FER2013. B-cos CNN matched baseline accuracy while achieving precise, interpretable eye and mouth focus.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">PyTorch</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">B-Cos Conv</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">FER2013</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Computer Vision</span>
+                        </div>
+                    </div>
+                    <button class="open-project-modal w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-project="bcos">
+                        <span>Architecture Deep Dive</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Project 5: Dynamic Pricing Engine -->
+                <div class="project-card flex flex-col justify-between glass-panel glass-panel-hover p-6 rounded-3xl border border-slate-800 transition duration-300" data-category="deployment">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono rounded bg-amber-950/70 text-amber-300 border border-amber-500/30">ML Deployment</span>
+                            <span class="text-xs font-mono text-amber-400 font-bold">RMSE 2.08</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Simulated Dynamic Pricing Engine</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Predicts ride fares from contextual signals: demand, distance, weather, and vehicle type across 10k+ samples. Packaged into a containerized Dockerized Streamlit microservice.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Python</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Random Forest</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Docker</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Streamlit</span>
+                        </div>
+                    </div>
+                    <button class="open-project-modal w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-project="pricing">
+                        <span>Architecture Deep Dive</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Project 6: Vision Transformers for Helmholtz Equation Reconstruction -->
+                <div class="project-card flex flex-col justify-between glass-panel glass-panel-hover p-6 rounded-3xl border border-slate-800 transition duration-300" data-category="scientific">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-2.5 py-0.5 text-[11px] font-mono rounded bg-purple-950/70 text-purple-300 border border-purple-500/30">Scientific ML • ViT</span>
+                            <span class="text-xs font-mono text-emerald-400 font-bold">Grade 1.3 • 8 ECTS</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Vision Transformers for Helmholtz Wave Reconstruction</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Architectural analysis evaluating patch-based multi-head self-attention mechanisms against spatial CNNs for forward wave-field modeling under the 2D Helmholtz PDE.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Vision Transformers</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Helmholtz PDE</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">PyTorch</span>
+                            <span class="px-2 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded">Grade 1.3</span>
+                        </div>
+                    </div>
+                    <button class="open-project-modal w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono flex items-center justify-center gap-1.5 transition" data-project="vit-helmholtz">
+                        <span>Architecture Deep Dive</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Research & Technical Case Studies Section -->
+        <section id="case-studies" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/80">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono uppercase tracking-wider mb-3">
+                        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                        <span>Research & Technical Writing</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Technical Case Studies
+                    </h2>
+                    <p class="text-slate-400 text-base mt-2 max-w-2xl">
+                        Deep-dive write-ups on architectural breakthroughs, mathematical formulations, and engineering post-mortems.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Article 1: DeepPET Fourier Wave-fields -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-cyan-500/40 transition duration-300">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 text-[10px] font-mono rounded bg-cyan-950/70 text-cyan-300 border border-cyan-500/30">Scientific ML</span>
+                            <span class="text-xs font-mono text-slate-400">6 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">
+                            Evaluating Fourier Layers in DeepPET: Tackling Phase Dispersion in Wave Modeling
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            Investigating how parameter learning across 2D Fourier frequencies overcomes localized spatial kernel limits for the 2D Helmholtz equation, cutting error by 34%.
+                        </p>
+                    </div>
+                    <button class="open-article-modal w-full py-2.5 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 transition" data-article="deeppet">
+                        <span>Read Full Case Study</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Article 2: Coronary Artery Centerline Extraction -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-purple-500/40 transition duration-300">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 text-[10px] font-mono rounded bg-purple-950/70 text-purple-300 border border-purple-500/30">Medical AI</span>
+                            <span class="text-xs font-mono text-slate-400">5 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">
+                            Automated 3D Coronary Artery Centerline Extraction from CTA Volumes
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            End-to-end vascular tracking pipeline with SimpleITK and CNN orientation tracking. Achieved 2.71 mm mean centerline deviation with 100% points within 5 mm.
+                        </p>
+                    </div>
+                    <button class="open-article-modal w-full py-2.5 rounded-xl bg-slate-800 hover:bg-purple-500 hover:text-white text-slate-200 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 transition" data-article="coronary">
+                        <span>Read Full Case Study</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Article 3: B-Cos Networks for Clinical AI -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-emerald-500/40 transition duration-300">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-0.5 text-[10px] font-mono rounded bg-emerald-950/70 text-emerald-300 border border-emerald-500/30">Explainable AI</span>
+                            <span class="text-xs font-mono text-slate-400">5 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 leading-snug">
+                            Explainable AI for Clinical Decision Support: Intrinsically Interpretable B-Cos Networks
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            Replacing unconstrained linear convolutions with cosine angle alignment to eliminate post-hoc Grad-CAM saliency noise while preserving baseline accuracy on FER2013.
+                        </p>
+                    </div>
+                    <button class="open-article-modal w-full py-2.5 rounded-xl bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 transition" data-article="bcos">
+                        <span>Read Full Case Study</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Dual-Column Timeline Section -->
+        <section id="experience" class="py-24 bg-dark-950/60 border-t border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-3">
+                        <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+                        <span>Background & Trajectory</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Experience & Education
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Left Column: Work Experience & Corporate Awards -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-cyan-400"></i>
+                            <h3 class="text-xl font-bold text-white">Professional Experience</h3>
+                        </div>
+
+                        <!-- Role 1: Toluna Corporate -->
+                        <div class="glass-panel p-6 rounded-2xl border border-slate-800 relative">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h4 class="text-base font-bold text-white">Data Analyst</h4>
+                                <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/30">June 2021 – Sept 2022</span>
+                            </div>
+                            <div class="text-xs font-mono text-slate-400 mb-4">Toluna Corporate • Gurugram, India</div>
+                            <ul class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cyan-400 font-bold">›</span>
+                                    <span>Optimized data processing workflows on the Quantum survey analytics platform, elevating processing efficiency and data integrity for client deliverables.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cyan-400 font-bold">›</span>
+                                    <span>Led a team of 5 junior analysts, sustaining a <strong>100% client satisfaction (CSAT)</strong> score across high-volume delivery cycles.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-cyan-400 font-bold">›</span>
+                                    <span>Delivered analytics to <strong>Procter & Gamble with 0 client-reported errors</strong>, earning consistent top ratings for accuracy, quality, and timeliness.</span>
+                                </li>
+                            </ul>
+
+                            <!-- Impact Awards Embedded Badge -->
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-[11px] font-mono rounded bg-amber-500/10 text-amber-300 border border-amber-500/30 flex items-center gap-1">
+                                    <i data-lucide="award" class="w-3 h-3"></i> Employee of the Month (May 2022)
+                                </span>
+                                <span class="px-2.5 py-1 text-[11px] font-mono rounded bg-amber-500/10 text-amber-300 border border-amber-500/30 flex items-center gap-1">
+                                    <i data-lucide="star" class="w-3 h-3"></i> Above & Beyond Award (May 2022)
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Role 2: E2E Research Services -->
+                        <div class="glass-panel p-6 rounded-2xl border border-slate-800 relative">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h4 class="text-base font-bold text-white">Jr. Data Analyst</h4>
+                                <span class="text-xs font-mono text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-500/30">Jan 2020 – May 2021</span>
+                            </div>
+                            <div class="text-xs font-mono text-slate-400 mb-4">E2E Research Services Pvt. Ltd • New Delhi, India</div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Used SPSS and advanced Microsoft Excel to track, merge, and analyze complex survey datasets for client reporting.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Education & Academic Certifications -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-400"></i>
+                            <h3 class="text-xl font-bold text-white">Education & Research</h3>
+                        </div>
+
+                        <!-- Degree 1: Universität Heidelberg -->
+                        <div class="glass-panel p-6 rounded-2xl border border-slate-800 relative">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h4 class="text-base font-bold text-white">M.Sc. Data and Computer Science</h4>
+                                <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/30">April 2023 – March 2026</span>
+                            </div>
+                            <div class="text-xs font-mono text-slate-400 mb-2">Universität Heidelberg • Heidelberg, Germany (120 ECTS)</div>
+                            <div class="text-xs text-slate-300 mb-3">
+                                <strong>Major:</strong> Machine Learning and Deep Learning &bull; <strong>Minor:</strong> Economics & Corporate Finance
+                            </div>
+                            
+                            <!-- Master's Thesis Box -->
+                            <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs text-slate-300 mb-3">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-mono text-cyan-300 text-[11px] font-semibold">Master's Thesis & Colloquium:</span>
+                                    <span class="font-mono text-emerald-400 text-[11px] font-bold">Grade 2.0 (34 ECTS)</span>
+                                </div>
+                                Evaluating Fourier Layers in DeepPET Architecture — A Comparative Study for Forward Modelling of the 2D Helmholtz Equation.
+                            </div>
+
+                            <!-- Top Coursework Distinction Badges -->
+                            <div class="space-y-1.5 pt-1 text-[11px] font-mono">
+                                <div class="text-slate-400 font-semibold mb-1 uppercase tracking-wider text-[10px]">Academic Honors & Distinctions:</div>
+                                <div class="flex items-center justify-between bg-slate-950/60 px-2.5 py-1 rounded border border-slate-800">
+                                    <span class="text-slate-300">Master Practical: Intelligent Systems</span>
+                                    <span class="text-emerald-400 font-bold">Grade 1.0 (Top Grade) • 8 ECTS</span>
+                                </div>
+                                <div class="flex items-center justify-between bg-slate-950/60 px-2.5 py-1 rounded border border-slate-800">
+                                    <span class="text-slate-300">Vision Transformers for Helmholtz Reconstruction</span>
+                                    <span class="text-cyan-400 font-bold">Grade 1.3 (High Distinction) • 8 ECTS</span>
+                                </div>
+                                <div class="flex items-center justify-between bg-slate-950/60 px-2.5 py-1 rounded border border-slate-800">
+                                    <span class="text-slate-300">Machine Learning, Data Mining & Predictive Modeling</span>
+                                    <span class="text-cyan-400 font-bold">Grade 1.3 • 8 ECTS</span>
+                                </div>
+                                <div class="flex items-center justify-between bg-slate-950/60 px-2.5 py-1 rounded border border-slate-800">
+                                    <span class="text-slate-300">Advanced Seminar: Retrieval Augmented Generation (RAG)</span>
+                                    <span class="text-purple-300 font-bold">Grade 2.0 • 4 ECTS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Degree 2: Galgotias University -->
+                        <div class="glass-panel p-6 rounded-2xl border border-slate-800 relative">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h4 class="text-base font-bold text-white">B.Tech. Computer Science and Engineering</h4>
+                                <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">2016 – 2020</span>
+                            </div>
+                            <div class="text-xs font-mono text-slate-400">Galgotias University • Greater Noida, India</div>
+                        </div>
+
+                        <!-- Interdisciplinary Economics & Software Engineering Minor -->
+                        <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-2 text-xs">
+                            <div class="text-xs font-mono text-purple-300 font-bold uppercase tracking-wider">Economics & Engineering Minor</div>
+                            <div class="text-slate-400 leading-relaxed text-[11px]">
+                                <strong class="text-slate-200">Corporate Finance (6 ECTS)</strong> &bull; <strong class="text-slate-200">Development Economics (8 ECTS)</strong> &bull; <strong class="text-slate-200">IT Project Management (3 ECTS)</strong> &bull; <strong class="text-slate-200">Knowledge Management in Software Engineering (3 ECTS)</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Certified Entrepreneurship & Innovation Leadership Section -->
+        <section id="innovation" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/80">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-purple-500/30 relative overflow-hidden shadow-2xl">
+                <div class="absolute -top-10 -right-10 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-slate-800 gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-950/70 border border-purple-500/30 text-purple-300 text-xs font-mono uppercase tracking-wider mb-3">
+                            <i data-lucide="rocket" class="w-3.5 h-3.5"></i>
+                            <span>hei_INNOVATION Transferagentur & heiSKILLS • Universität Heidelberg</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            Certified Entrepreneurial Skills & Product Innovation
+                        </h2>
+                        <p class="text-slate-400 text-sm mt-2 max-w-2xl leading-relaxed">
+                            Completed a rigorous <strong>510-hour workload (17 ECTS / Leistungspunkte)</strong> qualification in technology commercialization, software prototyping, venture creation, and agile team dynamics, certified by Heidelberg University's official technology transfer agency.
+                        </p>
+                    </div>
+
+                    <button class="open-project-modal inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-mono font-bold transition shadow-lg shadow-purple-600/20" data-project="entrepreneurship">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span>Inspect Certificate & Modules</span>
+                    </button>
+                </div>
+
+                <!-- 4 Core Competency Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    
+                    <!-- Pillar 1 -->
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
+                                    <i data-lucide="box" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs font-mono text-cyan-400 font-bold">5 ECTS / LP</span>
+                            </div>
+                            <h4 class="text-sm font-bold text-white mb-1.5">Software Prototyping & Student Innovation Lab</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Engineered functional software prototypes through rapid agile iterations, user feedback loops, and user-journey driven product development.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+                            Module: Software Practical
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 border border-purple-500/20">
+                                    <i data-lucide="users" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs font-mono text-purple-400 font-bold">3 ECTS / LP</span>
+                            </div>
+                            <h4 class="text-sm font-bold text-white mb-1.5">Leadership & Teamdynamics</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Trained in high-performing team leadership, psychological safety, and cross-functional orchestration—complements leadership of 5 analysts at Toluna.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+                            Module: Teamdynamics
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20">
+                                    <i data-lucide="compass" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs font-mono text-emerald-400 font-bold">2 ECTS / LP</span>
+                            </div>
+                            <h4 class="text-sm font-bold text-white mb-1.5">Experience Design Thinking</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                User empathy mapping, UX persona development, and experience design thinking to translate complex ML models into intuitive products.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+                            Module: Design Thinking
+                        </div>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 border border-amber-500/20">
+                                    <i data-lucide="mic" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs font-mono text-amber-400 font-bold">7 ECTS / LP</span>
+                            </div>
+                            <h4 class="text-sm font-bold text-white mb-1.5">Venture Creation & Pitch Training</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Business model generation, unit economics, and executive pitch training (Entrepreneurship I & II + Pitch Training).
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+                            Modules: Entrep. I, II & Pitch
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Competencies & Skills Matrix Section -->
+        <section id="skills" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/80">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-3">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                    <span>Technical Toolkit</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Core Competencies
+                </h2>
+                <p class="text-slate-400 text-base mt-4">
+                    Categorized matrix of research disciplines, ML frameworks, data engineering tools, and platforms.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Category 1: ML & DL Focus Areas -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                    <div class="flex items-center gap-2.5 mb-4 text-cyan-400">
+                        <i data-lucide="brain" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white text-base">ML & Deep Learning</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-cyan-300 border border-slate-700">Medical Imaging</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-cyan-300 border border-slate-700">Scientific ML</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-cyan-300 border border-slate-700">Biomedical NLP</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-cyan-300 border border-slate-700">Explainable AI</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-cyan-300 border border-slate-700">Predictive Modelling</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-cyan-300 border border-slate-700">Neural Networks</span>
+                    </div>
+                </div>
+
+                <!-- Category 2: Frameworks & Libraries -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                    <div class="flex items-center gap-2.5 mb-4 text-purple-400">
+                        <i data-lucide="code" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white text-base">Frameworks & Libraries</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-purple-300 border border-slate-700">PyTorch</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-purple-300 border border-slate-700">HuggingFace Transformers</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-purple-300 border border-slate-700">SimpleITK</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-purple-300 border border-slate-700">NumPy</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-purple-300 border border-slate-700">Pandas</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-purple-300 border border-slate-700">Matplotlib</span>
+                    </div>
+                </div>
+
+                <!-- Category 3: Cloud & MLOps -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                    <div class="flex items-center gap-2.5 mb-4 text-emerald-400">
+                        <i data-lucide="cloud" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white text-base">Cloud, MLOps & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-emerald-300 border border-slate-700">Google Cloud (GCP)</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-emerald-300 border border-slate-700">Docker</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-emerald-300 border border-slate-700">Weights & Biases</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-emerald-300 border border-slate-700">Git</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-emerald-300 border border-slate-700">Streamlit</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-emerald-300 border border-slate-700">Quantum Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Category 4: Research & LLMs -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                    <div class="flex items-center gap-2.5 mb-4 text-amber-400">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white text-base">Research & LLMs</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-amber-300 border border-slate-700">Prompt Engineering</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-amber-300 border border-slate-700">BERT & PubMedBERT</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-amber-300 border border-slate-700">RAG (Retrieval-Augmented)</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-amber-300 border border-slate-700">Biomedical Text Mining</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-amber-300 border border-slate-700">Model Monitoring</span>
+                    </div>
+                </div>
+
+                <!-- Category 5: Languages & Programming -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                    <div class="flex items-center gap-2.5 mb-4 text-blue-400">
+                        <i data-lucide="terminal" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white text-base">Languages & Data Engineering</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-blue-300 border border-slate-700 font-bold">Python</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-blue-300 border border-slate-700">SQL</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-blue-300 border border-slate-700">SPSS</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-blue-300 border border-slate-700">Advanced Excel</span>
+                    </div>
+                </div>
+
+                <!-- Category 6: Spoken Languages & Leadership -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                    <div class="flex items-center gap-2.5 mb-4 text-pink-400">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white text-base">Languages & Leadership</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-pink-300 border border-slate-700">English (Fluent)</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-pink-300 border border-slate-700">German (A2)</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-pink-300 border border-slate-700">Stakeholder Alignment</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-pink-300 border border-slate-700">Data-Driven Strategy</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/80 text-pink-300 border border-slate-700">Team Leadership (5 Analysts)</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact & Connect Section -->
+        <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/80">
+            <div class="max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-cyan-500/30 relative overflow-hidden shadow-2xl">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono uppercase tracking-wider mb-3">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Open to Opportunities</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Let's Connect & Collaborate
+                    </h2>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                        I am currently seeking full-time <strong class="text-cyan-400">Data Scientist & Machine Learning Engineer</strong> roles in India. Whether you have an open role, a research collaboration, or want to discuss deep learning, I'd love to talk.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    
+                    <!-- Direct Email Card with Copy Action -->
+                    <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-mono text-slate-400">Direct Email</div>
+                                <div class="text-sm font-semibold text-slate-100">arnavsinghal637@gmail.com</div>
+                            </div>
+                        </div>
+                        <button class="copy-email-btn p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition" title="Copy Email">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Direct LinkedIn Card -->
+                    <a href="https://linkedin.com/in/arnav-singhal" target="_blank" rel="noopener noreferrer" class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 flex items-center justify-between hover:border-cyan-500/40 transition group">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-mono text-slate-400">LinkedIn Profile</div>
+                                <div class="text-sm font-semibold text-slate-100 group-hover:text-cyan-400 transition">linkedin.com/in/arnav-singhal</div>
+                            </div>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-cyan-400 transition"></i>
+                    </a>
+
+                    <!-- Phone Contact -->
+                    <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] font-mono text-slate-400">Phone Number</div>
+                            <div class="text-sm font-semibold text-slate-100">+91 9811504728</div>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 border border-purple-500/20">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] font-mono text-slate-400">Current Location</div>
+                            <div class="text-sm font-semibold text-slate-100">Ghaziabad, INDIA</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Official Documents & Verified Credentials Download Hub -->
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="folder-check" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="text-xs font-mono text-slate-300 font-semibold uppercase tracking-wider">Direct Verified Credentials Download</span>
+                        </div>
+                        <span class="text-[11px] font-mono text-emerald-400">PDF Format</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <a href="Arnav_Singhal_Resume.pdf" download="Arnav_Singhal_Resume.pdf" class="flex items-center justify-between p-3 rounded-xl bg-slate-950/80 hover:bg-emerald-950/40 border border-slate-800 hover:border-emerald-500/40 transition group">
+                            <div class="flex items-center gap-2.5">
+                                <i data-lucide="file-text" class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition"></i>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Full Resume</div>
+                                    <div class="text-[10px] text-slate-400 font-mono">Arnav_Singhal_Resume.pdf</div>
+                                </div>
+                            </div>
+                            <i data-lucide="download" class="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transition"></i>
+                        </a>
+
+                        <a href="Arnav_Singhal_Entrepreneurial_Certificate.pdf" download="Arnav_Singhal_Entrepreneurial_Certificate.pdf" class="flex items-center justify-between p-3 rounded-xl bg-slate-950/80 hover:bg-purple-950/40 border border-slate-800 hover:border-purple-500/40 transition group">
+                            <div class="flex items-center gap-2.5">
+                                <i data-lucide="award" class="w-4 h-4 text-purple-400 group-hover:scale-110 transition"></i>
+                                <div>
+                                    <div class="text-xs font-bold text-white">hei_INNOVATION</div>
+                                    <div class="text-[10px] text-slate-400 font-mono">510h Entrepreneurship</div>
+                                </div>
+                            </div>
+                            <i data-lucide="download" class="w-3.5 h-3.5 text-slate-400 group-hover:text-purple-400 transition"></i>
+                        </a>
+
+                        <a href="Arnav_Singhal_MSc_Transcript.pdf" download="Arnav_Singhal_MSc_Transcript.pdf" class="flex items-center justify-between p-3 rounded-xl bg-slate-950/80 hover:bg-cyan-950/40 border border-slate-800 hover:border-cyan-500/40 transition group">
+                            <div class="flex items-center gap-2.5">
+                                <i data-lucide="graduation-cap" class="w-4 h-4 text-cyan-400 group-hover:scale-110 transition"></i>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Heidelberg Transcript</div>
+                                    <div class="text-[10px] text-slate-400 font-mono">120 ECTS • Grade 1.0</div>
+                                </div>
+                            </div>
+                            <i data-lucide="download" class="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-400 transition"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Button in Contact Form -->
+                <div class="text-center">
+                    <a href="mailto:arnavsinghal637@gmail.com?subject=Data%20Scientist%20Role%20Inquiry%20-%20Arnav%20Singhal" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/30">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Send Direct Email to Arnav</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-slate-900 bg-dark-950/80 text-slate-500 text-xs font-mono">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <div>
+                    &copy; 2026 Arnav Singhal &bull; Designed for high-impact AI research & engineering.
+                </div>
+                <div class="flex items-center gap-4 text-slate-400">
+                    <a href="https://linkedin.com/in/arnav-singhal" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">LinkedIn</a>
+                    <span>•</span>
+                    <a href="mailto:arnavsinghal637@gmail.com" class="hover:text-cyan-400 transition">Email</a>
+                    <span>•</span>
+                    <a href="#hero" class="hover:text-cyan-400 transition">Back to Top ↑</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Interactive Deep-Dive Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-dark-950/85 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-cyan-500/40 p-6 sm:p-8 relative shadow-2xl">
+            <!-- Close Button -->
+            <button id="modal-close-btn" class="absolute top-6 right-6 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition" aria-label="Close modal">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <!-- Dynamic Content -->
+            <div id="modal-dynamic-content"></div>
+        </div>
+    </div>
+
+    <!-- Research Case Study Reading Modal -->
+    <div id="article-modal" class="fixed inset-0 z-50 bg-dark-950/85 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-purple-500/40 p-6 sm:p-10 relative shadow-2xl">
+            <!-- Close Button -->
+            <button id="article-close-btn" class="absolute top-6 right-6 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition" aria-label="Close modal">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <!-- Dynamic Content -->
+            <div id="article-dynamic-content"></div>
+        </div>
+    </div>
+
+    <!-- Video Walkthrough Player Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 bg-dark-950/90 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="glass-panel max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-red-500/40 p-6 sm:p-8 relative shadow-2xl">
+            <!-- Close Button -->
+            <button id="video-close-btn" class="absolute top-6 right-6 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition" aria-label="Close modal">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <!-- Dynamic Content -->
+            <div id="video-dynamic-content"></div>
+        </div>
+    </div>
+
+    <!-- Copy Email Toast Notification -->
+    <div id="copy-toast" class="fixed bottom-6 right-6 z-50 bg-cyan-950/90 text-cyan-300 border border-cyan-500/50 px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 text-xs font-mono transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
+        <i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>
+        <span>Copied arnavsinghal637@gmail.com to clipboard!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="neural-canvas.js"></script>
+    <script src="interactive-demos.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
